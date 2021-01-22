@@ -1,5 +1,7 @@
 '''
                     Face Mask Detection
+               Code contributed by Carol Chen
+                        2021_01_22
 '''
 
 import numpy as np
