@@ -21,6 +21,10 @@ font_scale = 1
 weared_mask = "Thank You for wearing mask"
 cap = cv2.VideoCapture(0)
 
+#擷取網路攝影機串流影像
+fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+out = cv2.VideoWriter('output.avi', fourcc, 20.0, (640,  480))
+
 
 #取得預設的臉部偵測器
 detector = dlib.get_frontal_face_detector()
@@ -79,6 +83,7 @@ while True:
 
 
     cv2.imshow('Mask Detection', img)
+    out.write(img)
     k = cv2.waitKey(30) & 0xff
     if k == 27:
         break
